@@ -1,0 +1,60 @@
+{% extends "base/navbar.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Product Details Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Product Image -->
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/600" alt="Product Image" class="img-fluid rounded">
+                </div>
+                <!-- Product Info -->
+                <div class="col-md-6">
+                    <h1>Product Name</h1>
+                    <p class="text-muted">Category: Electronics</p>
+                    <p class="lead">$49.99</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+                    <div class="mt-4">
+                        <h5>Features:</h5>
+                        <ul>
+                            <li>Feature 1</li>
+                            <li>Feature 2</li>
+                            <li>Feature 3</li>
+                            <li>Feature 4</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <form class="d-flex align-items-center mb-3">
+                        <label for="size" class="me-2">Size:</label>
+                        <select class="form-select me-3" id="size" required style="width: 120px;">
+                            <option value="" disabled selected>Choose</option>
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                            <option value="xlarge">Extra Large</option>
+                        </select>
+                        <label for="quantity" class="me-2">Quantity:</label>
+                        <input type="number" id="quantity" class="form-control me-3" value="1" min="1" max="10" style="width: 80px;">
+                    </form>
+                    <br>
+                    <div class="d-flex">
+                        <button class="btn btn-primary me-2">Add to Cart</button>
+                        <button class="btn btn-success">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+{% endblock %}
