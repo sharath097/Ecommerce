@@ -15,23 +15,14 @@
             <div class="row g-4">
                 <!-- Product Image -->
                 <div class="col-md-6">
-                    <img src="https://via.placeholder.com/600" alt="Product Image" class="img-fluid rounded">
+                    <img src="/media/{{ product.product_images.first.image }}" alt="Product Image" class="img-fluid rounded" style="width:400px; height:500px; object-fit:cover;">
                 </div>
                 <!-- Product Info -->
                 <div class="col-md-6">
-                    <h1>Product Name</h1>
-                    <p class="text-muted">Category: Electronics</p>
-                    <p class="lead">$49.99</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
-                    <div class="mt-4">
-                        <h5>Features:</h5>
-                        <ul>
-                            <li>Feature 1</li>
-                            <li>Feature 2</li>
-                            <li>Feature 3</li>
-                            <li>Feature 4</li>
-                        </ul>
-                    </div>
+                    <h1>{{ product.product_name }}</h1>
+                    <p class="text-muted">Category: {{ product.category }}</p>
+                    <p class="lead">{{ product.price }}</p>
+                    <p>{{ product.product_description }}</p>
                     <br>
                     <form class="d-flex align-items-center mb-3">
                         <label for="size" class="me-2">Size:</label>

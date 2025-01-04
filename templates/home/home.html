@@ -26,11 +26,14 @@
                 {% for product in products %}
                 <div class="col-md-3">
                     <div class="card h-100">
-                        <img src="/media/{{product.product_images.first.image}}" style="width:200px; height:200px; object-fit:cover;" class="card-img-top" alt="Missing product image">
+                        <a href="{% url 'get_product' product.slug %}" style="text-decoration: none; color: black;">
+                        <img src="/media/{{product.product_images.first.image}}" style="width:255px; height:200px; object-fit:cover;" class="card-img-top" alt="Missing product image">
                         <div class="card-body">
                             <h5 class="card-title">{{ product.product_name }}</h5>
-                            <p class="card-text">{{ product.product_description }}</p>
-                            <p class="text-primary fw-bold">{{ product.price }}</p>
+                            <p class="card-text">{{ product.product_description|slice:":50" }}{% if product.product_description|length > 50 %}...{% endif %}</p>
+                        </a>
+                        <br>
+                            <p class="text-secondary fw-bold">Price: {{ product.price }}</p>
                             <a href="#" class="btn btn-primary">Add to Cart</a>
                         </div>
                     </div>
